@@ -34,7 +34,7 @@ int main()
     while(1)
     {
     menu=getch();
-    //printf("%d",menu); Âàæíî
+    //printf("%d",menu); Ã‚Ã Ã¦Ã­Ã®
     if(menu==49)
     {
         system("cls");
