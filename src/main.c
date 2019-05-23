@@ -9,13 +9,12 @@
 #define RIGHT_ARROW 4
 //Ilya COMMENTIRYI FUNKCII!!!
 
-
 void drawmenu(){ // NUFF SAID
 printf("1 - Game\n2 - Exit\n");
 }
 
 void drawgame(int n[4][4]){ // narisovat massiv
-    printf("+==+==+==+==+\n|%2d|%2d|%2d|%2d|\n+==+==+==+==+\n|%2d|%2d|%2d|%2d|\n+==+==+==+==+\n|%2d|%2d|%2d|%2d|\n+==+==+==+==+\n|%2d|%2d|%2d|%2d|\n+==+==+==+==+\n\n To Leave press 'Z'",n[0][0],n[0][1],n[0][2],n[0][3],n[1][0],n[1][1],n[1][2],n[1][3],n[2][0],n[2][1],n[2][2],n[2][3],n[3][0],n[3][1],n[3][2],n[3][3]);
+    printf("+===+===+===+===+\n|%2d|%2d|%2d|%2d|\n+===+===+===+===+\n|%2d|%2d|%2d|%2d|\n+===+===+===+===+\n|%2d|%2d|%2d|%2d|\n+===+===+===+===+\n|%2d|%2d|%2d|%2d|\n+==+==+==+==+\n\n To Leave press 'Z'",n[0][0],n[0][1],n[0][2],n[0][3],n[1][0],n[1][1],n[1][2],n[1][3],n[2][0],n[2][1],n[2][2],n[2][3],n[3][0],n[3][1],n[3][2],n[3][3]);
 
 }
 
@@ -48,7 +47,7 @@ void game(){ // Igra
     fit(numb);
     drawgame(numb);
     win=wich(numb);
-   // pr=getch();
+    //pr=getch();
 
     if(win == 0)// proverka na pobedu
     {
