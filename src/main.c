@@ -62,24 +62,36 @@ void game(){ // Igra
 
 int main()
 {
-    int menu=0,uk=122,where;// where otvechaet za mestonaho... gde sidim
-
+    int menu=0,uk=122,where=0;// where otvechaet za mestonaho... gde sidim
+    drawmenu();
     while(1)
     {
         switch(uk)
         {
-        case 122: // Bukva Z
-            system("cls");
             drawmenu();
+        case 122: // Bukva Z
+            if(where=1)
+            {
+                system("cls");
+                drawmenu();
+                where=0;
+            }
             break;
         case 49: //Cifra 1
-            system("cls");
-            game();
-            break;
+            if(where==0)
+            {
+                system("cls");
+                game();
+                where=1;
+                break;
+            }
         case 50: //Cifra 2
-            system("cls");
-            return 0;
-            break;
+            if(where==0)
+            {
+                system("cls");
+                return 0;
+                break;
+            }
         }
         uk=getch();
     }
