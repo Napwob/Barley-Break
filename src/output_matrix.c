@@ -2,18 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-int x[4][4];
-void matrix()
-{
-    int k = 0;
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 4; j++) {
-            x[i][j] = k;
-            k++;
-        }
-    }
-}
-void output()
+#include "output_matrix.h"
+void drawgame(int* x[4][4])
 {
     int x1 = 50, y1 = 10;
     int x2 = 50, y2 = 9;
@@ -46,9 +36,3 @@ void output()
     endwin();
 }
 
-int main()
-{
-    matrix();
-    output();
-    return 0;
-}
