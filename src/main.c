@@ -1,8 +1,8 @@
-#include <conio.h>
-#include <dos.h>
-#include <stdio.h>
-#include <time.h>
 #include <windows.h>
+#include <conio.h>
+#include <time.h>
+#include <stdio.h>
+#include <dos.h>
 #define UP_ARROW 1
 #define LEFT_ARROW 2
 #define DOWN_ARROW 3
@@ -43,7 +43,7 @@ void fit(int* n[4][4]) // zoplnenit i peremeshat massiv
     for (i = 0; i < 4; i++) {
         for (j = 0; j < 4; j++) {
             n[i][j] = nu;
-            // printf("%d - i\n%d - j\n%d - n\n\n",i,j,n); // Не удаляй мне
+            printf("%d - i\n%d - j\n%d - n\n\n",i,j,n); // Не удаляй мне
             // потом пригодится
             nu++;
         }
@@ -66,8 +66,8 @@ void game()
     int numb[4][4], win = 0, pr = 0;
     while (1) {
         fit(numb);
-        drawgame(numb);
-        win = wich(numb);
+        //drawgame(numb);
+        //win = wich(numb);
         // pr=getch();
 
         if (win == 0) // proverka na pobedu
