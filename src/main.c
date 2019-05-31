@@ -4,35 +4,37 @@
 #include "gafu.h"
 #include "output_matrix.h"
 #include "menu.h"
+
 int main()
 {
-    int menu = 0, uk = 122,
-        where = 0; // where otvechaet za mestonaho... gde sidim
+    enum week uk=pz;
+    int menu = 0;
+    int where = 0; // where otvechaet za mestonaho... gde sidim
     drawmenu();
     while (1) {
         switch (uk) {
-        case 122: // Bukva Z
+        case pz: // Bukva Z
             if (where = 1) {
                 where = 0;
                 system("cls");
                 drawmenu();
             }
             break;
-        case 49: // Cifra 1
+        case p1: // Cifra 1
             if (where == 0) {
                 where = 1;
                 system("cls");
                 game(uk);
                 break;
             }
-        case 50: // Cifra 2
+        case p2: // Cifra 2
             if (where == 0) {
                 where = 1;
                 system("cls");
                 Creators();
                 break;
             }
-        case 51: // Cifra 3
+        case p3: // Cifra 3
             if (where == 0) {
                 system("cls");
                 return 0;
