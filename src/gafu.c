@@ -8,10 +8,13 @@ struct c {
     int y0;
 };
 
+enum keyboard{p1=49, p2=50, p3=51, pz=122,pup=72,pdown=80,pleft=75,pright=77};
+
 struct c fit(int* numb[4][4], struct c c) // zoplnenit i peremeshat massiv
 {
     srand(time(NULL));
-    int i, j = 0, r = 0;
+    int i, j = 0;
+    enum keyboard r=p1;
     numb[0][0] = 0;
     numb[1][0] = 1;
     numb[2][0] = 2;
@@ -41,28 +44,28 @@ struct c fit(int* numb[4][4], struct c c) // zoplnenit i peremeshat massiv
         if (r == 4)
             r = 77;
         switch (r) {
-        case 72: // vverh
+        case pup: // vverh
             if ((c.y0 - 1) >= 0) {
                 numb[c.x0][c.y0] = numb[c.x0][c.y0 - 1];
                 numb[c.x0][c.y0 - 1] = 0;
                 c.y0--;
             }
             break;
-        case 80: // vverh
+        case pdown: // vverh
             if ((c.y0 + 1) <= 3) {
                 numb[c.x0][c.y0] = numb[c.x0][c.y0 + 1];
                 numb[c.x0][c.y0 + 1] = 0;
                 c.y0++;
             }
             break;
-        case 75: // vverh
+        case pleft: // vverh
             if ((c.x0 - 1) >= 0) {
                 numb[c.x0][c.y0] = numb[c.x0 - 1][c.y0];
                 numb[c.x0 - 1][c.y0] = 0;
                 c.x0--;
             }
             break;
-        case 77: // vverh
+        case pright: // vverh
             if ((c.x0 + 1) <= 3) {
                 numb[c.x0][c.y0] = numb[c.x0 + 1][c.y0];
                 numb[c.x0 + 1][c.y0] = 0;
@@ -89,7 +92,8 @@ int wich(int n[4][4]) // proverka na pobedu
 
 void game()
 { // Igra
-    int numb[4][4], pr = 0, i = 0, j = 0;
+    int numb[4][4],i = 0, j = 0;
+    enum keyboard pr;
     int t, x0, y0; // pervoe za y vtoroe za x
     struct c c;
     c = fit(numb, c);
@@ -97,28 +101,28 @@ void game()
         system("cls");
         // Dvizshenie
         switch (pr) {
-        case 72: // vverh
+        case pup: // vverh
             if ((c.y0 - 1) >= 0) {
                 numb[c.x0][c.y0] = numb[c.x0][c.y0 - 1];
                 numb[c.x0][c.y0 - 1] = 0;
                 c.y0--;
             }
             break;
-        case 80: // vverh
+        case pdown: // vverh
             if ((c.y0 + 1) <= 3) {
                 numb[c.x0][c.y0] = numb[c.x0][c.y0 + 1];
                 numb[c.x0][c.y0 + 1] = 0;
                 c.y0++;
             }
             break;
-        case 75: // vverh
+        case pleft: // vverh
             if ((c.x0 - 1) >= 0) {
                 numb[c.x0][c.y0] = numb[c.x0 - 1][c.y0];
                 numb[c.x0 - 1][c.y0] = 0;
                 c.x0--;
             }
             break;
-        case 77: // vverh
+        case pright: // vverh
             if ((c.x0 + 1) <= 3) {
                 numb[c.x0][c.y0] = numb[c.x0 + 1][c.y0];
                 numb[c.x0 + 1][c.y0] = 0;
