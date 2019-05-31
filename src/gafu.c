@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 #include "gafu.h"
-// Ilya COMMENTIRYI FUNKCII!!!
 
 struct c {
     int x0;
