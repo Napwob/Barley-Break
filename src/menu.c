@@ -18,3 +18,8 @@ void drawmenu()
     printw("Exit\n");
 }
 
+void Creators()
+{
+printw("Vlad 'Napwob' Rusmanov\nIlya 'Kadconner' Kryukov\n\nPress 'Z' for back to Menu");
+}
+

@@ -6,4 +6,5 @@
 #include <stdlib.h>
 
 void drawmenu();
+void Creators();
 #endif

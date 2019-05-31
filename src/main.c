@@ -27,6 +27,13 @@ int main()
             }
         case 50: // Cifra 2
             if (where == 0) {
+                where = 1;
+                system("cls");
+                Creators();
+                break;
+            }
+        case 51: // Cifra 3
+            if (where == 0) {
                 system("cls");
                 return 0;
                 break;
