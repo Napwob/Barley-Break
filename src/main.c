@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "gafu.h"
-
+#include "output_matrix.h"
+#include "menu.h"
 int main()
 {
     int menu = 0, uk = 122,
