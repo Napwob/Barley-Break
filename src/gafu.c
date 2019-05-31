@@ -87,7 +87,7 @@ int wich(int n[4][4]) // proverka na pobedu
     return 0;
 }
 
-void game(int* uk)
+void game()
 { // Igra
     int numb[4][4], pr = 0, i = 0, j = 0;
     int t, x0, y0; // pervoe za y vtoroe za x
