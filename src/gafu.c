@@ -5,7 +5,6 @@
 #include <time.h>
 #include <windows.h>
 #include "gafu.h"
-// Ilya COMMENTIRYI FUNKCII!!!
 
 struct c {
     int x0;
