@@ -31,7 +31,7 @@ int wich(int n[4][4]) // proverka na pobedu
     return 0;
 }
 
-struct c fit(int* numb[4][], struct c c)
+struct c fit(int** numb, struct c c)
 {
     int r,i,j,nu=0;
     enum keyboard r1;
@@ -93,7 +93,7 @@ int game()
     struct c c;
     c.x0 = 0;
     c.y0 = 0;
-    c = fit(numb, c);
+    c = fit((int**)numb, c);
     while (1) {
         clear();
         // Dvizshenie
