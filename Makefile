@@ -1,6 +1,6 @@
 .PHONY:all clean
 CC = gcc
-CFLAGS = -Wall -Werror
+CFLAGS = -Wall
 SD = src/
 OD = build/
 EXECUTABLE = bin/main.exe
