@@ -73,6 +73,7 @@ struct c fit(int* numb[4][4], struct c c)
             break;
         }
     }
+    return c;
 }
 
 int game()
@@ -83,7 +84,8 @@ int game()
     struct c c;
     c.x0 = 0;
     c.y0 = 0;
- while (1) {
+    c=fit(numb,c);
+    while (1) {
         clear();
         // Dvizshenie
         switch (pr) {

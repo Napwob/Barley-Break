@@ -4,8 +4,8 @@
 #include <stdlib.h>
 #include <time.h>
 
-struct c fit(int* numb[4][4], struct c c);
 int wich(int n[4][4]);
+struct c fit(int* numb[4][4], struct c c);
 int game();
 
 #endif
