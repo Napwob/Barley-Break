@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "gafu.h"
+#include "output_matrix.h"
 #include <ncurses.h>
 struct c {
     int x0;
