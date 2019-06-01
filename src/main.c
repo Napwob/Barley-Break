@@ -25,8 +25,9 @@ int main()
             if (where == 0) {
                 where = 1;
                 clear();
-                game(uk);
-		where=0;
+                uk=game();
+                clear;
+                where=0;
                 break;
             }
         case p2: // Cifra 2
