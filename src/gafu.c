@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "gafu.h"
+//#include "gafu.h"
 
 struct c {
     int x0;
@@ -12,11 +12,8 @@ enum keyboard{p1=49, p2=50, p3=51, pz=122,pup=72,pdown=80,pleft=75,pright=77};
 
 struct c fit(int* numb[4][4], struct c c) // zoplnenit i peremeshat massiv
 {
-    srand(time(NULL));
-    int i, j = 0;
-    enum keyboard r=p1;
-    numb[0][0] = 0;
-    numb[1][0] = 1;
+    numb[0][0] = 1;
+    numb[1][0] = 0;
     numb[2][0] = 2;
     numb[3][0] = 3;
     numb[0][1] = 4;
@@ -31,50 +28,9 @@ struct c fit(int* numb[4][4], struct c c) // zoplnenit i peremeshat massiv
     numb[1][3] = 13;
     numb[2][3] = 14;
     numb[3][3] = 15;
-    c.x0 = 0;
+    c.x0 = 1;
     c.y0 = 0;
-    for (i = 0; i < 10000; i++) {
-        r = rand() % 5;
-        if (r == 1)
-            r = 72;
-        if (r == 2)
-            r = 80;
-        if (r == 3)
-            r = 75;
-        if (r == 4)
-            r = 77;
-        switch (r) {
-        case pup: // vverh
-            if ((c.y0 - 1) >= 0) {
-                numb[c.x0][c.y0] = numb[c.x0][c.y0 - 1];
-                numb[c.x0][c.y0 - 1] = 0;
-                c.y0--;
-            }
-            break;
-        case pdown: // vverh
-            if ((c.y0 + 1) <= 3) {
-                numb[c.x0][c.y0] = numb[c.x0][c.y0 + 1];
-                numb[c.x0][c.y0 + 1] = 0;
-                c.y0++;
-            }
-            break;
-        case pleft: // vverh
-            if ((c.x0 - 1) >= 0) {
-                numb[c.x0][c.y0] = numb[c.x0 - 1][c.y0];
-                numb[c.x0 - 1][c.y0] = 0;
-                c.x0--;
-            }
-            break;
-        case pright: // vverh
-            if ((c.x0 + 1) <= 3) {
-                numb[c.x0][c.y0] = numb[c.x0 + 1][c.y0];
-                numb[c.x0 + 1][c.y0] = 0;
-                c.x0++;
-            }
-            break;
-        }
-    }
-    drawgame(numb);
+
     return c;
 }
 
@@ -82,11 +38,15 @@ int wich(int n[4][4]) // proverka na pobedu
 {
     int i, j;
 
-    for (i = 1; i < 4; i++)
-        for (j = 1; j < 4; j++)
-            if (n[i - 1][j - 1] > n[i][j])
-                return 1;
+    for (i = 0; i < 4; i++){
+        for (j = 1; j < 4; j++){
+            printf("%d > %d  ",n[j-1][i],n[j][i]);
 
+            if (n[j-1][i] > n[j][i]){
+
+                return 1;}
+                printf("\n");}
+    }
     return 0;
 }
 
@@ -134,7 +94,7 @@ void game()
         drawgame(numb);
         if (wich(numb) == 0) // proverka na pobedu
         {
-            system("cls");
+            //system("cls");
             printf("WIN");
             break;
         }
@@ -144,4 +104,22 @@ void game()
             break;
         }
     }
+}
+
+void drawgame(int numb[4][4])
+{
+    int i,j;
+    for(i=0;i<4;++i){
+        for(j=0;j<4;++j){
+            printf("%2d ",numb[j][i]);
+        }
+        printf("\n");
+    }
+}
+
+int main(){
+game();
+
+
+
 }
