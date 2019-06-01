@@ -1,8 +1,8 @@
+#include "menu.h"
 #include <ncurses.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "menu.h"
 void drawmenu()
 {
     initscr();
@@ -20,6 +20,6 @@ void drawmenu()
 
 void Creators()
 {
-printw("Vlad 'Napwob' Rusmanov\nIlya 'Kadconner' Kryukov\n\nPress 'Z' for back to Menu");
+    printw("Vlad 'Napwob' Rusmanov\nIlya 'Kadconner' Kryukov\n\nPress 'Z' for "
+           "back to Menu");
 }
-
