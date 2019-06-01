@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <ncurses.h>
 
 struct c fit(int* numb[4][4], struct c c);
 int wich(int n[4][4]);
