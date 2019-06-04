@@ -31,12 +31,12 @@ int wich(int n[4][4]) // proverka na pobedu
     return 0;
 }
 
-struct c fit(int** numb, struct c c)
+struct c fit(int numb[][4], struct c c)
 {
-    int r,i,j,nu=0;
+    int r, i, j, nu = 0;
     enum keyboard r1;
-    for (i = 0; i < 4; ++i) {
-        for (j = 0; j < 4; ++j) {
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 4; j++) {
             numb[j][i] = nu;
             nu++;
         }
@@ -93,7 +93,7 @@ int game()
     struct c c;
     c.x0 = 0;
     c.y0 = 0;
-    c = fit((int**)numb, c);
+    c = fit(numb, c);
     while (1) {
         clear();
         // Dvizshenie
@@ -128,7 +128,7 @@ int game()
             break;
         }
         // printf("\n%d %d - %d\n",x0,y0,numb[x0][y0]); // Test
-        drawgame(numb);
+        drawgame(numb,4);
         if (wich(numb) == 0) // proverka na pobedu
         {
             clear();
@@ -144,3 +144,5 @@ int game()
         }
     }
 }
+
+

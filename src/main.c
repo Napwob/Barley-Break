@@ -17,6 +17,7 @@ enum keyboard {
 };
 int main()
 {
+initscr();
     enum keyboard uk = pz;
     int menu = 0;
     int where = 0; // where otvechaet za mestonaho... gde sidim

@@ -3,22 +3,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-void drawgame(int **x)
+void drawgame(int x[][4], int n)
 {
-    int x1 = 50, y1 = 10;
-    int x2 = 50, y2 = 9;
-    int x3 = 50, y3 = 11;
-    initscr();
-    start_color();
+start_color();
     init_pair(1, COLOR_GREEN, COLOR_BLACK);
     init_pair(2, COLOR_RED, COLOR_BLACK);
     attron(A_BOLD);
     attron(COLOR_PAIR(1));
-    for (int i = 0; i < 4; i++) {
+    int x1 = 50, y1 = 10;
+    int x2 = 50, y2 = 9;
+    int x3 = 50, y3 = 11;
+    for (int i = 0; i < n; ++i) {
         x1 = 50;
         x2 = 50;
         x3 = 50;
-        for (int j = 0; j < 4; j++) {
+        for (int j = 0; j < 4; ++j) {
             if (x[j][i] == 0) {
                 attroff(COLOR_PAIR(1));
                 attron(COLOR_PAIR(2));

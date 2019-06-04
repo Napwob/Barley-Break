@@ -6,7 +6,7 @@
 #include <time.h>
 
 int wich(int n[4][4]);
-struct c fit(int** numb, struct c c);
+struct c fit(int numb[][4], struct c c);
 int game();
 
 #endif
