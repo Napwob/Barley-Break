@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-void drawgame(int x[4][4])
+void drawgame(int **x)
 {
     int x1 = 50, y1 = 10;
     int x2 = 50, y2 = 9;
