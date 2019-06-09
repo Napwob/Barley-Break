@@ -11,3 +11,4 @@ struct c moveit(int numb[][4], struct c c,int pr)
 int game();
 
 #endif
+

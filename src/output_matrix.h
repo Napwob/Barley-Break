@@ -5,6 +5,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void drawgame();
+void drawgame(int x[][4], int n);
 
 #endif
