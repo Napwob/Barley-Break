@@ -85,10 +85,52 @@ struct c fit(int numb[][4], struct c c)
     return c;
 }
 
+<<<<<<< HEAD
 struct c moveit(int numb[][4], struct c c,int pr)
 {
+||||||| merged common ancestors
+int wich(int n[4][4]) // proverka na pobedu
+{
+    int i, j;
+
+    for (i = 1; i < 4; i++)
+        for (j = 1; j < 4; j++)
+            if (n[i - 1][j - 1] > n[i][j])
+                return 1;
+
+    return 0;
+}
+
+void game()
+{ // Igra
+    int numb[4][4],i = 0, j = 0;
+=======
+int game()
+{ // Igra
+    int numb[4][4], i = 0, j = 0, nu = 0;
+>>>>>>> d1f7dc7
     enum keyboard pr;
+<<<<<<< HEAD
     switch (pr) {
+||||||| merged common ancestors
+    int t, x0, y0; // pervoe za y vtoroe za x
+    struct c c;
+    c = fit(numb, c);
+    while (1) {
+        system("cls");
+        // Dvizshenie
+        switch (pr) {
+=======
+    int t; // pervoe za y vtoroe za x
+    struct c c;
+    c.x0 = 0;
+    c.y0 = 0;
+    c = fit(numb, c);
+    while (1) {
+        clear();
+        // Dvizshenie
+        switch (pr) {
+>>>>>>> d1f7dc7
         case pup: // vverh
             if ((c.y0 - 1) >= 0) {
                 numb[c.x0][c.y0] = numb[c.x0][c.y0 - 1];
@@ -135,8 +177,14 @@ int game()
         // Dvizshenie
         c=move(numb,c,pr);
         // printf("\n%d %d - %d\n",x0,y0,numb[x0][y0]); // Test
+<<<<<<< HEAD
         drawgame(numb,4);
         pr = getch();
+||||||| merged common ancestors
+        drawgame(numb);
+=======
+        drawgame(numb,4);
+>>>>>>> d1f7dc7
         if (wich(numb) == 0) // proverka na pobedu
         {
             clear();
