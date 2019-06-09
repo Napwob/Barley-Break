@@ -10,6 +10,7 @@ void drawmenu()
     init_pair(1, COLOR_RED, COLOR_BLACK);
     attron(A_BOLD);
     attron(COLOR_PAIR(1));
+    curs_set(0);
     move(10, 70);
     printw("New game\n");
     move(15, 70);

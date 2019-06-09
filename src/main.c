@@ -18,10 +18,10 @@ enum keyboard {
 int main()
 {
 initscr();
+curs_set(0);
     enum keyboard uk = pz;
     int menu = 0;
     int where = 0; // where otvechaet za mestonaho... gde sidim
-    drawmenu();
     while (1) {
         switch (uk) {
         case pz: // Bukva Z
@@ -54,8 +54,14 @@ initscr();
                 return 0;
                 break;
             }
+	default :
+		if(where == 0)
+			drawmenu();
+		if(where == 1)
+			Creators();
         }
         uk = getch();
+	clear();
     }
     return 0;
 }
