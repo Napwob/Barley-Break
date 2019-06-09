@@ -1,106 +1,57 @@
+#include "gafu.h"
+#include "output_matrix.h"
+#include <ncurses.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "gafu.h"
-
 struct c {
     int x0;
     int y0;
 };
 
-enum keyboard{p1=49, p2=50, p3=51, pz=122,pup=72,pdown=80,pleft=75,pright=77};
-
-struct c fit(int* numb[4][4], struct c c) // zoplnenit i peremeshat massiv
-{
-    srand(time(NULL));
-    int i, j = 0;
-    enum keyboard r=p1;
-    numb[0][0] = 0;
-    numb[1][0] = 1;
-    numb[2][0] = 2;
-    numb[3][0] = 3;
-    numb[0][1] = 4;
-    numb[1][1] = 5;
-    numb[2][1] = 6;
-    numb[3][1] = 7;
-    numb[0][2] = 8;
-    numb[1][2] = 9;
-    numb[2][2] = 10;
-    numb[3][2] = 11;
-    numb[0][3] = 12;
-    numb[1][3] = 13;
-    numb[2][3] = 14;
-    numb[3][3] = 15;
-    c.x0 = 0;
-    c.y0 = 0;
-    for (i = 0; i < 10000; i++) {
-        r = rand() % 5;
-        if (r == 1)
-            r = 72;
-        if (r == 2)
-            r = 80;
-        if (r == 3)
-            r = 75;
-        if (r == 4)
-            r = 77;
-        switch (r) {
-        case pup: // vverh
-            if ((c.y0 - 1) >= 0) {
-                numb[c.x0][c.y0] = numb[c.x0][c.y0 - 1];
-                numb[c.x0][c.y0 - 1] = 0;
-                c.y0--;
-            }
-            break;
-        case pdown: // vverh
-            if ((c.y0 + 1) <= 3) {
-                numb[c.x0][c.y0] = numb[c.x0][c.y0 + 1];
-                numb[c.x0][c.y0 + 1] = 0;
-                c.y0++;
-            }
-            break;
-        case pleft: // vverh
-            if ((c.x0 - 1) >= 0) {
-                numb[c.x0][c.y0] = numb[c.x0 - 1][c.y0];
-                numb[c.x0 - 1][c.y0] = 0;
-                c.x0--;
-            }
-            break;
-        case pright: // vverh
-            if ((c.x0 + 1) <= 3) {
-                numb[c.x0][c.y0] = numb[c.x0 + 1][c.y0];
-                numb[c.x0 + 1][c.y0] = 0;
-                c.x0++;
-            }
-            break;
-        }
-    }
-    drawgame(numb);
-    return c;
-}
+enum keyboard {
+    p1 = 49,
+    p2 = 50,
+    p3 = 51,
+    pz = 122,
+    pup = 65,
+    pdown = 66,
+    pleft = 68,
+    pright = 67
+};
 
 int wich(int n[4][4]) // proverka na pobedu
 {
     int i, j;
-
-    for (i = 1; i < 4; i++)
+    for (i = 0; i < 4; i++)
         for (j = 1; j < 4; j++)
-            if (n[i - 1][j - 1] > n[i][j])
+            if (n[j - 1][i] > n[j][i])
                 return 1;
 
     return 0;
 }
 
-void game()
-{ // Igra
-    int numb[4][4],i = 0, j = 0;
-    enum keyboard pr;
-    int t, x0, y0; // pervoe za y vtoroe za x
-    struct c c;
-    c = fit(numb, c);
-    while (1) {
-        system("cls");
-        // Dvizshenie
-        switch (pr) {
+struct c fit(int numb[][4], struct c c)
+{
+    int r, i, j, nu = 0;
+    enum keyboard r1;
+    for (i = 0; i < 4; i++) {
+        for (j = 0; j < 4; j++) {
+            numb[j][i] = nu;
+            nu++;
+        }
+    }
+    for (i = 0; i < 10000; i++) {
+        r = rand() % 5;
+        if (r == 1)
+            r1 = pup;
+        if (r == 2)
+            r1 = pdown;
+        if (r == 3)
+            r1 = pleft;
+        if (r == 4)
+            r1 = pright;
+        switch (r1) {
         case pup: // vverh
             if ((c.y0 - 1) >= 0) {
                 numb[c.x0][c.y0] = numb[c.x0][c.y0 - 1];
@@ -130,18 +81,75 @@ void game()
             }
             break;
         }
-        // printf("\n%d %d - %d\n",x0,y0,numb[x0][y0]); // Test
-        drawgame(numb);
-        if (wich(numb) == 0) // proverka na pobedu
-        {
-            system("cls");
-            printf("WIN");
+    }
+    return c;
+}
+
+struct c moveit(int numb[][4], struct c c,int pr)
+{
+    enum keyboard pr;
+    switch (pr) {
+        case pup: // vverh
+            if ((c.y0 - 1) >= 0) {
+                numb[c.x0][c.y0] = numb[c.x0][c.y0 - 1];
+                numb[c.x0][c.y0 - 1] = 0;
+                c.y0--;
+            }
+            break;
+        case pdown: // vverh
+            if ((c.y0 + 1) <= 3) {
+                numb[c.x0][c.y0] = numb[c.x0][c.y0 + 1];
+                numb[c.x0][c.y0 + 1] = 0;
+                c.y0++;
+            }
+            break;
+        case pleft: // vverh
+            if ((c.x0 - 1) >= 0) {
+                numb[c.x0][c.y0] = numb[c.x0 - 1][c.y0];
+                numb[c.x0 - 1][c.y0] = 0;
+                c.x0--;
+            }
+            break;
+        case pright: // vverh
+            if ((c.x0 + 1) <= 3) {
+                numb[c.x0][c.y0] = numb[c.x0 + 1][c.y0];
+                numb[c.x0 + 1][c.y0] = 0;
+                c.x0++;
+            }
             break;
         }
+    return c;
+}
+
+int game()
+{ // Igra
+    int numb[4][4], i = 0, j = 0, nu = 0;
+    enum keyboard pr;
+    int t; // pervoe za y vtoroe za x
+    struct c c;
+    c.x0 = 0;
+    c.y0 = 0;
+    c = fit(numb, c);
+    while (1) {
+        clear();
+        // Dvizshenie
+        c=move(numb,c,pr);
+        // printf("\n%d %d - %d\n",x0,y0,numb[x0][y0]); // Test
+        drawgame(numb,4);
         pr = getch();
+        if (wich(numb) == 0) // proverka na pobedu
+        {
+            clear();
+            move(15, 45);
+            printw("WIN");
+            break;
+        }
         // printf("%d",pr); // prigoditsa
         if (pr == 122) {
             break;
+            return pz;
         }
     }
 }
+
+
