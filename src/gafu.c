@@ -1,5 +1,6 @@
 #include "gafu.h"
 #include "output_matrix.h"
+#include "menu.h"
 #include <ncurses.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -139,6 +140,8 @@ int game()
         pr = getch();
         // printf("%d",pr); // prigoditsa
         if (pr == 122) {
+	clear();
+	drawmenu();
             break;
             return pz;
         }
