@@ -17,8 +17,8 @@ enum keyboard {
 };
 int main()
 {
-initscr();
-curs_set(0);
+    initscr();
+    curs_set(0);
     enum keyboard uk = pz;
     int menu = 0;
     int where = 0; // where otvechaet za mestonaho... gde sidim
@@ -54,14 +54,14 @@ curs_set(0);
                 return 0;
                 break;
             }
-	default :
-		if(where == 0)
-			drawmenu();
-		if(where == 1)
-			Creators();
+        default:
+            if (where == 0)
+                drawmenu();
+            if (where == 1)
+                Creators();
         }
         uk = getch();
-	clear();
+        clear();
     }
     return 0;
 }
