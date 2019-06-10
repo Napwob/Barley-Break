@@ -8,6 +8,7 @@ void drawgame(int x[][4], int n)
 start_color();
     init_pair(1, COLOR_GREEN, COLOR_BLACK);
     init_pair(2, COLOR_RED, COLOR_BLACK);
+    init_pair(3, COLOR_MAGENTA, COLOR_BLACK);
     attron(A_BOLD);
     attron(COLOR_PAIR(1));
     int x1 = 50, y1 = 10;
@@ -44,5 +45,10 @@ start_color();
         y1 = y1 + 5;
         y2 = y2 + 5;
         y3 = y3 + 5;
+attron(COLOR_PAIR(3));
+	move(35, 54.5);
+printw("Press 'Z' to back for Menu");
+attroff(COLOR_PAIR(3));
     }
 }
+

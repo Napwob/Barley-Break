@@ -11,10 +11,6 @@ struct c {
 };
 
 enum keyboard {
-    p1 = 49,
-    p2 = 50,
-    p3 = 51,
-    pz = 122,
     pup = 65,
     pdown = 66,
     pleft = 68,
@@ -88,9 +84,8 @@ struct c fit(int numb[][4], struct c c)
 
 int game()
 { // Igra
-    int numb[4][4], i = 0, j = 0, nu = 0;
+    int numb[4][4];
     enum keyboard pr;
-    int t; // pervoe za y vtoroe za x
     struct c c;
     c.x0 = 0;
     c.y0 = 0;
@@ -135,6 +130,8 @@ int game()
             clear();
             move(15, 45);
             printw("WIN");
+	    move(16, 45);
+	    printw("Press 'Z' to continue");
             break;
         }
         pr = getch();
@@ -143,9 +140,10 @@ int game()
 	clear();
 	drawmenu();
             break;
-            return pz;
+            return 122;
         }
     }
+return 122;
 }
 
 
