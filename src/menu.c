@@ -24,3 +24,24 @@ void Creators()
     printw("Vlad 'Napwob' Rusmanov\nIlya 'Kadconner' Kryukov\n\nPress 'Z' for "
            "back to Menu");
 }
+
+void output_win()
+{
+
+printw("         wwwwwww                 wwwwwwww                 wwwwwww     iiiiiiiiiiiiii        nnnnnnnnnn            nnnnnnn\n");            
+printw("          wwwwwww               wwwwwwwwww               wwwwwww        iiiiiiiiii          nnnnnnnnnnn           nnnnnnn\n");  
+printw("           wwwwwww             wwwwwwwwwwww             wwwwwww           iiiiii            nnnnnnnnnnnn          nnnnnnn\n");     
+printw("            wwwwwww           wwwwwwwwwwwwww           wwwwwww             iiii             nnnnnnn nnnnn         nnnnnnn\n");
+printw("             wwwwwww         wwwwwww  wwwwwww         wwwwwww              iiii             nnnnnnn  nnnnn        nnnnnnn\n");
+printw("              wwwwwww       wwwwwww    wwwwwww       wwwwwww               iiii             nnnnnnn   nnnnn       nnnnnnn\n");   
+printw("               wwwwwww     wwwwwww      wwwwwww     wwwwwww                iiii             nnnnnnn    nnnnn      nnnnnnn\n");
+printw("                wwwwwww   wwwwwww        wwwwwww   wwwwwww                 iiii             nnnnnnn     nnnnn     nnnnnnn\n");
+printw("       	         wwwwwww wwwwwww          wwwwwww wwwwwww                  iiii             nnnnnnn      nnnnn    nnnnnnn\n");            
+printw("	          wwwwwwwwwwwww            wwwwwwwwwwwww                   iiii             nnnnnnn       nnnnn   nnnnnnn\n");        
+printw("	           wwwwwwwwwww              wwwwwwwwwww                    iiii             nnnnnnn        nnnnn  nnnnnnn\n");
+printw("                    wwwwwwwww                wwwwwwwww                     iiii             nnnnnnn         nnnnn nnnnnnn\n");
+printw("                     wwwwwww                  wwwwwww                     iiiiii            nnnnnnn          nnnnnnnnnnnn\n");
+printw("                      wwwww                    wwwww                    iiiiiiiiii          nnnnnnn           nnnnnnnnnnn\n"); 
+printw("                       www                      www                   iiiiiiiiiiiiii        nnnnnnn            nnnnnnnnnn\n");
+}
+

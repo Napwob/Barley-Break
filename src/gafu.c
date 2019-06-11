@@ -43,7 +43,7 @@ struct c fit(int numb[][4], struct c c)
             r1 = pleft;
         if (r == 4)
             r1 = pright;
-        c = mv(numb, c, r1);
+        //c = mv(numb, c, r1);
     }
     return c;
 }
@@ -100,9 +100,10 @@ int game()
         if (wich(numb) == 0) // proverka na pobedu
         {
             clear();
-            move(15, 45);
-            printw("WIN");
-            move(16, 45);
+            move(9, 0);
+	    output_win();
+            //printw("WIN");
+            move(35, 60);
             printw("Press 'Z' to continue");
             break;
         }

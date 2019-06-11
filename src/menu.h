@@ -7,4 +7,5 @@
 
 void drawmenu();
 void Creators();
+void output_win();
 #endif
