@@ -103,8 +103,8 @@ int game()
             move(9, 0);
             output_win();
             // printw("WIN");
-            move(35, 60);
-            printw("Press 'Z' to continue");
+            move(35, 56);
+            printw("Press any key to continue");
             break;
         }
         pr = getch();
