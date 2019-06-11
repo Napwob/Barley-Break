@@ -18,7 +18,7 @@ void drawgame(int x[][4], int n)
         x1 = 50;
         x2 = 50;
         x3 = 50;
-        for (int j = 0; j < 4; ++j) {
+        for (int j = 0; j < n; ++j) {
             if (x[j][i] == 0) {
                 attroff(COLOR_PAIR(1));
                 attron(COLOR_PAIR(2));
