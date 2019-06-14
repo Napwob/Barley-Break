@@ -27,22 +27,36 @@ void Creators()
 
 void output_win()
 {
-
-printw("         wwwwwww                 wwwwwwww                 wwwwwww     iiiiiiiiiiiiii        nnnnnnnnnn            nnnnnnn\n");            
-printw("          wwwwwww               wwwwwwwwww               wwwwwww        iiiiiiiiii          nnnnnnnnnnn           nnnnnnn\n");  
-printw("           wwwwwww             wwwwwwwwwwww             wwwwwww           iiiiii            nnnnnnnnnnnn          nnnnnnn\n");     
-printw("            wwwwwww           wwwwwwwwwwwwww           wwwwwww             iiii             nnnnnnn nnnnn         nnnnnnn\n");
-printw("             wwwwwww         wwwwwww  wwwwwww         wwwwwww              iiii             nnnnnnn  nnnnn        nnnnnnn\n");
-printw("              wwwwwww       wwwwwww    wwwwwww       wwwwwww               iiii             nnnnnnn   nnnnn       nnnnnnn\n");   
-printw("               wwwwwww     wwwwwww      wwwwwww     wwwwwww                iiii             nnnnnnn    nnnnn      nnnnnnn\n");
-printw("                wwwwwww   wwwwwww        wwwwwww   wwwwwww                 iiii             nnnnnnn     nnnnn     nnnnnnn\n");
-printw("       	         wwwwwww wwwwwww          wwwwwww wwwwwww                  iiii             nnnnnnn      nnnnn    nnnnnnn\n");            
-printw("	          wwwwwwwwwwwww            wwwwwwwwwwwww                   iiii             nnnnnnn       nnnnn   nnnnnnn\n");        
-printw("	           wwwwwwwwwww              wwwwwwwwwww                    iiii             nnnnnnn        nnnnn  nnnnnnn\n");
-printw("                    wwwwwwwww                wwwwwwwww                     iiii             nnnnnnn         nnnnn nnnnnnn\n");
-printw("                     wwwwwww                  wwwwwww                     iiiiii            nnnnnnn          nnnnnnnnnnnn\n");
-printw("                      wwwww                    wwwww                    iiiiiiiiii          nnnnnnn           nnnnnnnnnnn\n"); 
-printw("                       www                      www                   iiiiiiiiiiiiii        nnnnnnn            nnnnnnnnnn\n");
+    printw("         wwwwwww                 wwwwwwww                 wwwwwww  "
+           "   iiiiiiiiiiiiii        nnnnnnnnnn            nnnnnnn\n");
+    printw("          wwwwwww               wwwwwwwwww               wwwwwww   "
+           "     iiiiiiiiii          nnnnnnnnnnn           nnnnnnn\n");
+    printw("           wwwwwww             wwwwwwwwwwww             wwwwwww    "
+           "       iiiiii            nnnnnnnnnnnn          nnnnnnn\n");
+    printw("            wwwwwww           wwwwwwwwwwwwww           wwwwwww     "
+           "        iiii             nnnnnnn nnnnn         nnnnnnn\n");
+    printw("             wwwwwww         wwwwwww  wwwwwww         wwwwwww      "
+           "        iiii             nnnnnnn  nnnnn        nnnnnnn\n");
+    printw("              wwwwwww       wwwwwww    wwwwwww       wwwwwww       "
+           "        iiii             nnnnnnn   nnnnn       nnnnnnn\n");
+    printw("               wwwwwww     wwwwwww      wwwwwww     wwwwwww        "
+           "        iiii             nnnnnnn    nnnnn      nnnnnnn\n");
+    printw("                wwwwwww   wwwwwww        wwwwwww   wwwwwww         "
+           "        iiii             nnnnnnn     nnnnn     nnnnnnn\n");
+    printw("       	         wwwwwww wwwwwww          wwwwwww wwwwwww      "
+           "            iiii             nnnnnnn      nnnnn    nnnnnnn\n");
+    printw("	          wwwwwwwwwwwww            wwwwwwwwwwwww               "
+           "    iiii             nnnnnnn       nnnnn   nnnnnnn\n");
+    printw("	           wwwwwwwwwww              wwwwwwwwwww                "
+           "    iiii             nnnnnnn        nnnnn  nnnnnnn\n");
+    printw("                    wwwwwwwww                wwwwwwwww             "
+           "        iiii             nnnnnnn         nnnnn nnnnnnn\n");
+    printw("                     wwwwwww                  wwwwwww              "
+           "       iiiiii            nnnnnnn          nnnnnnnnnnnn\n");
+    printw("                      wwwww                    wwwww               "
+           "     iiiiiiiiii          nnnnnnn           nnnnnnnnnnn\n");
+    printw("                       www                      www                "
+           "   iiiiiiiiiiiiii        nnnnnnn            nnnnnnnnnn\n");
 }
 
 void levels()
@@ -60,17 +74,17 @@ void levels()
     move(20, 70);
     printw("Exit\n");
     move(8, 82);
-	printw("1)Easy");
-	move(10, 82);
-	printw("2)Normal");
-	move(12, 82);
-	printw("3)Hard");
-   move(8, 95);
-   printw("3x3");
-   move(10, 95);
-   printw("4x4");
-   move(12, 95);
-   printw("5x5");
+    printw("1)Easy");
+    move(10, 82);
+    printw("2)Normal");
+    move(12, 82);
+    printw("3)Hard");
+    move(8, 95);
+    printw("3x3");
+    move(10, 95);
+    printw("4x4");
+    move(12, 95);
+    printw("5x5");
 }
 
 void matrix()
@@ -88,17 +102,16 @@ void matrix()
     move(20, 70);
     printw("Exit\n");
     move(8, 82);
-	printw("  Easy");
-	move(10, 82);
-	printw("  Normal");
-	move(12, 82);
-	printw("  Hard");
-   move(8, 93);
-   printw("1)3x3");
-   move(10, 93);
-   printw("2)4x4");
-   move(12, 93);
-   printw("3)5x5");
+    printw("  Easy");
+    move(10, 82);
+    printw("  Normal");
+    move(12, 82);
+    printw("  Hard");
+    move(8, 93);
+    printw("1)3x3");
+    move(10, 93);
+    printw("2)4x4");
+    move(12, 93);
+    printw("3)5x5");
 }
-
 

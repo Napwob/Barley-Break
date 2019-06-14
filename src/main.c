@@ -20,11 +20,11 @@ int main()
     initscr();
     curs_set(0);
     enum keyboard uk = pz;
-	int matr=4;
-	int lv = 0;
+    int matr = 4;
+    int lv = 0;
     int menu = 0;
     int where = 0; // where otvechaet za mestonaho... gde sidim
-	drawmenu();
+    drawmenu();
     while (1) {
         switch (uk) {
         case pz: // Bukva Z
@@ -38,16 +38,19 @@ int main()
             if (where == 0) {
                 where = 1;
                 clear();
-		levels();
-		lv = getch();
-		clear();
-		matrix();
-		matr = getch();
-		if(matr==p1) matr=3;
-		if(matr==p2) matr=4;
-		if(matr==p3) matr=5;
-		clear();
-                uk = game(lv,matr);
+                levels();
+                lv = getch();
+                clear();
+                matrix();
+                matr = getch();
+                if (matr == p1)
+                    matr = 3;
+                if (matr == p2)
+                    matr = 4;
+                if (matr == p3)
+                    matr = 5;
+                clear();
+                uk = game(lv, matr);
                 clear;
                 where = 0;
                 break;
