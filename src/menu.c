@@ -65,12 +65,40 @@ void levels()
 	printw("2)Normal");
 	move(12, 82);
 	printw("3)Hard");
-   move(8, 93);
+   move(8, 95);
    printw("3x3");
-   move(10, 93);
+   move(10, 95);
    printw("4x4");
-   move(12, 93);
+   move(12, 95);
    printw("5x5");
+}
+
+void matrix()
+{
+    initscr();
+    start_color();
+    init_pair(1, COLOR_RED, COLOR_BLACK);
+    attron(A_BOLD);
+    attron(COLOR_PAIR(1));
+    curs_set(0);
+    move(10, 70);
+    printw("New game\n");
+    move(15, 70);
+    printw("Creators\n");
+    move(20, 70);
+    printw("Exit\n");
+    move(8, 82);
+	printw("  Easy");
+	move(10, 82);
+	printw("  Normal");
+	move(12, 82);
+	printw("  Hard");
+   move(8, 93);
+   printw("1)3x3");
+   move(10, 93);
+   printw("2)4x4");
+   move(12, 93);
+   printw("3)5x5");
 }
 
 
