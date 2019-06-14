@@ -22,7 +22,6 @@ int main()
     enum keyboard uk = pz;
     int matr = 4;
     int lv = 0;
-    int menu = 0;
     int where = 0; // where otvechaet za mestonaho... gde sidim
     drawmenu();
     while (1) {
@@ -51,7 +50,7 @@ int main()
                     matr = 5;
                 clear();
                 uk = game(lv, matr);
-                clear;
+                clear();
                 where = 0;
                 break;
             }
