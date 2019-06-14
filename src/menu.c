@@ -114,4 +114,3 @@ void matrix()
     move(12, 93);
     printw("3)5x5");
 }
-

@@ -151,4 +151,3 @@ void drawgame5(int x[][6])
         attroff(COLOR_PAIR(3));
     }
 }
-
