@@ -20,12 +20,14 @@ int main()
     initscr();
     curs_set(0);
     enum keyboard uk = pz;
+	int lv = 0;
     int menu = 0;
     int where = 0; // where otvechaet za mestonaho... gde sidim
+	drawmenu();
     while (1) {
         switch (uk) {
         case pz: // Bukva Z
-            if (where = 1) {
+            if (where == 1) {
                 where = 0;
                 clear();
                 drawmenu();
@@ -35,7 +37,10 @@ int main()
             if (where == 0) {
                 where = 1;
                 clear();
-                uk = game();
+		levels();
+		lv = getch();
+		clear();
+                uk = game(lv);
                 clear;
                 where = 0;
                 break;

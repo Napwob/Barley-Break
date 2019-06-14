@@ -10,7 +10,16 @@ struct c {
     int y0;
 };
 
-enum keyboard { pup = 65, pdown = 66, pleft = 68, pright = 67 };
+enum keyboard {
+    p1 = 49,
+    p2 = 50,
+    p3 = 51,
+    pz = 122,
+    pup = 72,
+    pdown = 80,
+    pleft = 75,
+    pright = 77
+};
 
 int wich(int n[4][4]) // proverka na pobedu
 {
@@ -23,9 +32,9 @@ int wich(int n[4][4]) // proverka na pobedu
     return 0;
 }
 
-struct c fit(int numb[][4], struct c c)
+struct c fit(int numb[][4], struct c c,int level)
 {
-    int r, i, j, nu = 0;
+    int r, i, j, nu = 0,per=500;
     enum keyboard r1;
     for (i = 0; i < 4; i++) {
         for (j = 0; j < 4; j++) {
@@ -33,7 +42,9 @@ struct c fit(int numb[][4], struct c c)
             nu++;
         }
     }
-    for (i = 0; i < 10000; i++) {
+	if (level == p1) per= 20;
+	if (level == p3) per= 1000;
+	    for (i = 0; i < per; i++) {
         r = rand() % 5;
         if (r == 1)
             r1 = pup;
@@ -83,14 +94,14 @@ struct c mv(int numb[][4], struct c c, int pr)
     return c;
 }
 
-int game()
+int game(int level)
 { // Igra
     int numb[4][4];
     enum keyboard pr;
     struct c c;
     c.x0 = 0;
     c.y0 = 0;
-    c = fit(numb, c);
+    c = fit(numb, c, level);
     while (1) {
         clear();
         // Dvizshenie

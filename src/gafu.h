@@ -7,7 +7,7 @@
 
 int wich(int n[4][4]);
 struct c mv(int numb[][4], struct c c, int r);
-struct c fit(int numb[][4], struct c c);
-int game();
+struct c fit(int numb[][4], struct c c,int level);
+int game(int level);
 
 #endif
