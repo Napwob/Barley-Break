@@ -26,9 +26,9 @@ CTEST(errortext__test1, result_test)
             nu++;
         }
     }
-    int matrix = 4;
+	int matrix=4;
     // When
-    const int result = wich(numb, matrix);
+    const int result = wich(numb,matrix);
 
     // Then
     const int expected = 0;
@@ -47,8 +47,8 @@ CTEST(errortext__test2, result_test)
     }
     numb[1][1] = 100;
     // When
-    int matrix = 4;
-    const int result = wich(numb, matrix);
+int matrix=4;
+    const int result = wich(numb,matrix);
 
     // Then
     const int expected = 1;
@@ -70,8 +70,8 @@ CTEST(errortext__test3, result_test)
     c.x0 = 0;
     c.y0 = 0;
     pr = pdown;
-    int matrix = 4;
-    c = mv(numb, c, pr, matrix);
+int matrix=4;
+    c = mv(numb, c, pr,matrix);
     ASSERT_EQUAL(1, c.y0);
 }
 CTEST(errortext__test4, result_test)
@@ -90,15 +90,15 @@ CTEST(errortext__test4, result_test)
     c.x0 = 0;
     c.y0 = 0;
     pr = pright;
-    int matrix = 4;
-    c = mv(numb, c, pr, matrix);
+int matrix=4;
+    c = mv(numb, c, pr,matrix);
     ASSERT_EQUAL(1, c.x0);
 }
 CTEST(errortext__test5, result_test)
 {
     // Given
-    int numb[6][6];
-    int matrix = 4;
+   int numb[6][6];
+int matrix=4;
     int nu = 0, i, j;
     enum keyboard pr;
     struct c c;
@@ -111,16 +111,16 @@ CTEST(errortext__test5, result_test)
     c.x0 = 0;
     c.y0 = 0;
     pr = pright;
-    c = mv(numb, c, pr, matrix);
+    c = mv(numb, c, pr,matrix);
     pr = pleft;
-    c = mv(numb, c, pr, matrix);
+    c = mv(numb, c, pr,matrix);
     ASSERT_EQUAL(0, c.x0);
 }
 CTEST(errortext__test6, result_test)
 {
     // Given
     int numb[6][6];
-    int matrix = 4;
+int matrix=4;
     int nu = 0, i, j;
     enum keyboard pr;
     struct c c;
@@ -133,9 +133,9 @@ CTEST(errortext__test6, result_test)
     c.x0 = 0;
     c.y0 = 0;
     pr = pup;
-    c = mv(numb, c, pr, matrix);
+    c = mv(numb, c, pr,matrix);
     pr = pdown;
-    c = mv(numb, c, pr, matrix);
+    c = mv(numb, c, pr,matrix);
     ASSERT_EQUAL(0, c.x0);
 }
 

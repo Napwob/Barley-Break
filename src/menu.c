@@ -7,9 +7,9 @@ void drawmenu()
 {
     initscr();
     start_color();
-    init_pair(1, COLOR_RED, COLOR_BLACK);
+    init_pair(2, COLOR_RED, COLOR_BLACK);
     attron(A_BOLD);
-    attron(COLOR_PAIR(1));
+    attron(COLOR_PAIR(2));
     curs_set(0);
     move(10, 68);
     printw("1)New game\n");
@@ -17,10 +17,16 @@ void drawmenu()
     printw("2)Creators\n");
     move(20, 68);
     printw("3)Exit\n");
+    attroff(COLOR_PAIR(2));
 }
 
 void Creators()
 {
+    initscr();
+    start_color();
+    init_pair(1, COLOR_RED, COLOR_BLACK);
+    attron(A_BOLD);
+    attron(COLOR_PAIR(1));
     printw("Vlad 'Napwob' Rusmanov\nIlya 'Kadconner' Kryukov\n\nPress 'Z' for "
            "back to Menu");
 }
