@@ -27,7 +27,12 @@ void Creators()
     init_pair(1, COLOR_RED, COLOR_BLACK);
     attron(A_BOLD);
     attron(COLOR_PAIR(1));
-    printw("Developer(s)	213\n\nPublisher(s)	213\n\nDirector(s)	Vladislav Rusmanov\n\nProducer(s)	Vladislav Rusmanov \n\nDesigner(s)	Ilya Kryukov\n\nProgrammer(s)	Vladislav Rusmanov,Ilya Kryukov\n\nArtist(s)	Ilya Kryukov\n\nTester(s)	Sigoru\n\n\nPress 'Z' to Menu");
+    printw("Developer(s)	213\n\nPublisher(s)	"
+           "213\n\nDirector(s)	Vladislav Rusmanov\n\nProducer(s)	"
+           "Vladislav Rusmanov \n\nDesigner(s)	Ilya "
+           "Kryukov\n\nProgrammer(s)	Vladislav Rusmanov,Ilya "
+           "Kryukov\n\nArtist(s)	Ilya Kryukov\n\nTester(s)	"
+           "Sigoru\n\n\nPress 'Z' to Menu");
 }
 
 void output_win()
